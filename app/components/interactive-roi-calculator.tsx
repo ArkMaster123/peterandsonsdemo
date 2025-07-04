@@ -51,14 +51,14 @@ export function InteractiveRoiCalculator() {
   }
 
   return (
-    <section id="roi-calculator" className="py-16 md:py-24 bg-light-gray">
+    <section id="roi-calculator" className="py-16 md:py-24 bg-charcoal">
       <div className="container mx-auto px-4 md:px-6">
-        <Card className="max-w-3xl mx-auto shadow-lg">
+        <Card className="max-w-3xl mx-auto shadow-xl bg-card border-0">
           <CardHeader className="text-center p-8">
-            <CardTitle className="text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+            <CardTitle className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {step < 3 ? "See Your Potential ROI" : "Your Results"}
             </CardTitle>
-            <CardDescription className="mt-4 max-w-2xl mx-auto text-lg text-charcoal/80">
+            <CardDescription className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
               {step === 1 && "Answer two simple questions to see how our games can boost your revenue."}
               {step === 2 && "Here's your estimated monthly uplift. Enter your email to get a detailed report."}
               {step === 3 && "Thank you! Your detailed report is on its way."}
@@ -68,7 +68,7 @@ export function InteractiveRoiCalculator() {
             {step === 1 && (
               <div className="space-y-8">
                 <div>
-                  <Label htmlFor="monthly-players" className="text-lg font-medium text-charcoal">
+                  <Label htmlFor="monthly-players" className="text-lg font-medium text-foreground">
                     Monthly Active Players
                   </Label>
                   <div className="flex items-center gap-4 mt-2">
@@ -89,7 +89,7 @@ export function InteractiveRoiCalculator() {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="avg-revenue" className="text-lg font-medium text-charcoal">
+                  <Label htmlFor="avg-revenue" className="text-lg font-medium text-foreground">
                     Average Monthly Revenue per Player (USD)
                   </Label>
                   <div className="flex items-center gap-4 mt-2">
@@ -111,7 +111,7 @@ export function InteractiveRoiCalculator() {
                 </div>
                 <Button
                   size="lg"
-                  className="w-full bg-premium-gold text-white hover:bg-premium-gold/90"
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
                   onClick={handleCalculate}
                 >
                   <BarChart className="mr-2 h-5 w-5" />
@@ -123,15 +123,15 @@ export function InteractiveRoiCalculator() {
             {step === 2 && (
               <div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                  <div className="bg-light-gray p-6 rounded-lg">
-                    <p className="text-lg text-charcoal/80">Projected Monthly Revenue Increase</p>
-                    <p className="text-5xl font-bold text-data-blue mt-2 font-mono">
+                  <div className="bg-muted p-6 rounded-lg">
+                    <p className="text-lg text-muted-foreground">Projected Monthly Revenue Increase</p>
+                    <p className="text-5xl font-bold text-accent mt-2 font-mono">
                       {formatCurrency(results.revenueUplift)}
                     </p>
                   </div>
-                  <div className="bg-light-gray p-6 rounded-lg">
-                    <p className="text-lg text-charcoal/80">Estimated Player Engagement Uplift</p>
-                    <p className="text-5xl font-bold text-data-blue mt-2 font-mono">{results.engagementUplift}%</p>
+                  <div className="bg-muted p-6 rounded-lg">
+                    <p className="text-lg text-muted-foreground">Estimated Player Engagement Uplift</p>
+                    <p className="text-5xl font-bold text-accent mt-2 font-mono">{results.engagementUplift}%</p>
                   </div>
                 </div>
                 <form onSubmit={handleEmailSubmit} className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -143,7 +143,7 @@ export function InteractiveRoiCalculator() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                  <Button type="submit" size="lg" className="bg-deep-navy text-white hover:bg-deep-navy/90">
+                  <Button type="submit" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                     <Mail className="mr-2 h-5 w-5" />
                     Send Full Report
                   </Button>
@@ -153,11 +153,11 @@ export function InteractiveRoiCalculator() {
 
             {step === 3 && (
               <div className="text-center">
-                <PartyPopper className="h-16 w-16 mx-auto text-premium-gold" />
-                <h3 className="mt-4 text-2xl font-bold text-deep-navy">Check Your Inbox!</h3>
-                <p className="mt-2 text-charcoal/80">
+                <PartyPopper className="h-16 w-16 mx-auto text-accent" />
+                <h3 className="mt-4 text-2xl font-bold text-foreground">Check Your Inbox!</h3>
+                <p className="mt-2 text-muted-foreground">
                   A personalized report with competitive analysis and implementation steps has been sent to{" "}
-                  <span className="font-semibold text-charcoal">{email}</span>.
+                  <span className="font-semibold text-foreground">{email}</span>.
                 </p>
               </div>
             )}
