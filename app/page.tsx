@@ -167,6 +167,57 @@ export default function Component() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Why Choose Peter & Sons?
+              </h2>
+              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                We do things differently. Here's what makes us special.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-accent-foreground font-bold text-xl">🎨</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Creative Games</h3>
+                <p className="text-muted-foreground">
+                  We make games that look amazing and feel different. No boring copies here.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-accent-foreground font-bold text-xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Stand Out</h3>
+                <p className="text-muted-foreground">
+                  We help you be different from other casinos. Players notice unique games.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-accent-foreground font-bold text-xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Perfect Details</h3>
+                <p className="text-muted-foreground">
+                  We check every detail to make sure our games work perfectly for you.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-accent-foreground font-bold text-xl">🤝</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Easy to Work With</h3>
+                <p className="text-muted-foreground">
+                  We make everything simple. Easy to set up, easy to play, easy to enjoy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <InteractiveRoiCalculator />
       </main>
       <footer className="bg-charcoal text-light-gray">

@@ -120,11 +120,11 @@ export function NewHero() {
         <div className="py-24 md:pb-32 lg:pb-36 lg:pt-48">
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-12 text-center">
             <h1 className="mt-8 max-w-4xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold text-white drop-shadow-2xl">
-              Stand-Out Games for Smart Casino Operators
+              Games That Win Big for Casino Partners
             </h1>
             <p className="mt-8 max-w-3xl text-balance text-lg text-white/90 drop-shadow-lg">
-              Our games keep players happy and spending more. We work with you to grow your business and increase your
-              profits.
+              We make games that players love to play. Happy players spend more time and money. 
+              This means more profit for your casino.
             </p>
             <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
               <Button
