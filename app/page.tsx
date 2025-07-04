@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ShoppingCart, Twitter, Linkedin, Facebook } from "lucide-react"
+import { ShoppingCart, Twitter, Linkedin, Facebook, ArrowRight } from "lucide-react"
 import { InteractiveRoiCalculator } from "@/app/components/interactive-roi-calculator"
 import { NewHero } from "@/app/components/new-hero"
 
@@ -117,54 +117,97 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="merchandise" className="py-16 md:py-24 bg-muted">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="py-24 bg-black relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80" />
+          </div>
+          
+          <div className="container mx-auto px-4 md:px-6 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Get Your Merch</h2>
+              <p className="text-gray-400 text-lg">Cool gear for your team, events, and partners.</p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+              <div className="group relative">
+                <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden">
+                  <Image
+                    src="/shop/hoodie.png"
+                    alt="Premium Branded Hoodie"
+                    width={300}
+                    height={300}
+                    className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-white font-semibold">Premium Branded Hoodie</h3>
+                  <p className="text-gray-400 text-sm">Limited Edition</p>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden">
+                  <Image
+                    src="/shop/tshirt.png"
+                    alt="Branded Cap"
+                    width={300}
+                    height={300}
+                    className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-white font-semibold">Branded T-Shirt</h3>
+                  <p className="text-gray-400 text-sm">Classic Style</p>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden">
+                  <Image
+                    src="/shop/tshirt2.png"
+                    alt="Executive Cap"
+                    width={300}
+                    height={300}
+                    className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-white font-semibold">Premium T-Shirt</h3>
+                  <p className="text-gray-400 text-sm">Premium Collection</p>
+                </div>
+              </div>
+
+              <div className="group relative">
+                <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden">
+                  <Image
+                    src="/shop/keychain.png"
+                    alt="Collectible Game Chips"
+                    width={300}
+                    height={300}
+                    className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-white font-semibold">Collectible Keychain</h3>
+                  <p className="text-gray-400 text-sm">Limited Edition</p>
+                </div>
+              </div>
+            </div>
+
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Get Your Merch</h2>
-              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Cool gear for your team, events, and partners.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-8 md:grid-cols-3">
-              <div className="text-center">
-                <Image
-                  src="/placeholder-cau9i.png"
-                  alt="Branded Hoodie"
-                  width={400}
-                  height={400}
-                  className="rounded-lg mx-auto"
-                />
-                <h3 className="mt-4 text-xl font-bold text-foreground">Premium Branded Hoodie</h3>
-              </div>
-              <div className="text-center">
-                <Image
-                  src="/placeholder-xc2om.png"
-                  alt="Branded Cap"
-                  width={400}
-                  height={400}
-                  className="rounded-lg mx-auto"
-                />
-                <h3 className="mt-4 text-xl font-bold text-foreground">Executive Cap</h3>
-              </div>
-              <div className="text-center">
-                <Image
-                  src="/placeholder-ouq6k.png"
-                  alt="Collectible Poker Chips"
-                  width={400}
-                  height={400}
-                  className="rounded-lg mx-auto"
-                />
-                <h3 className="mt-4 text-xl font-bold text-foreground">Collectible Game Chips</h3>
-              </div>
-            </div>
-            <div className="text-center mt-12">
-              <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link href="#">
-                  <ShoppingCart className="mr-2 h-5 w-5" /> Shop Merch
-                </Link>
-              </Button>
+              <Link href="/merchandise">
+                <Button 
+                  size="lg"
+                  className="bg-premium-gold text-black hover:bg-premium-gold/90 transition-all duration-300 group"
+                >
+                  Shop Merch
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
+
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:40px_100%] pointer-events-none opacity-5" />
         </section>
 
         <section className="py-16 md:py-24 bg-background">
