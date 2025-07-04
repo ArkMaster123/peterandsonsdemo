@@ -11,6 +11,9 @@ import { gamesData } from "./data"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
+import { Header } from "@/app/components/header"
+import { Badge } from "@/components/ui/badge"
+import { Gamepad2 } from "lucide-react"
 
 const themes = ["Mythology", "Adventure", "Sci-Fi", "Fantasy", "Classic"]
 const features = ["Free Spins", "Jackpot", "Megaways", "Bonus Buy"]
@@ -57,94 +60,15 @@ export default function GamesPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full bg-card/80 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <MountainIcon className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-foreground">Peter & Sons</span>
-          </Link>
-          <nav className="hidden lg:flex items-center gap-6 text-lg font-medium">
-            <Link href="/about" className="hover:text-accent transition-colors" prefetch={false}>
-              About
-            </Link>
-            <Link href="/games" className="text-accent font-semibold transition-colors" prefetch={false}>
-              Games
-            </Link>
-            <Link href="#" className="hover:text-accent transition-colors" prefetch={false}>
-              Partnerships
-            </Link>
-            <Link href="#" className="hover:text-accent transition-colors" prefetch={false}>
-              Merchandise
-            </Link>
-            <Link href="#" className="hover:text-accent transition-colors" prefetch={false}>
-              Resources
-            </Link>
-          </nav>
-          <div className="hidden lg:flex items-center gap-4">
-            <ThemeToggle />
-            <Button
-              variant="outline"
-              asChild
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
-            >
-              <Link href="/client-portal/login">Login</Link>
-            </Button>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Get in Touch</Button>
-          </div>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden bg-transparent">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-background">
-              <nav className="grid gap-6 text-lg font-medium p-6">
-                <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                  <MountainIcon className="h-6 w-6 text-accent" />
-                  <span className="font-bold">Peter & Sons</span>
-                </Link>
-                <Link href="/about" className="hover:text-accent" prefetch={false}>
-                  About
-                </Link>
-                <Link href="/games" className="text-accent font-semibold" prefetch={false}>
-                  Games
-                </Link>
-                <Link href="#" className="hover:text-accent" prefetch={false}>
-                  Partnerships
-                </Link>
-                <Link href="#" className="hover:text-accent" prefetch={false}>
-                  Merchandise
-                </Link>
-                <Link href="#" className="hover:text-accent" prefetch={false}>
-                  Resources
-                </Link>
-                <div className="flex items-center gap-4 mt-4">
-                  <ThemeToggle />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
-                  >
-                    <Link href="/client-portal/login">Login</Link>
-                  </Button>
-                  <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Get in Touch</Button>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </header>
-
-      <main className="flex-1">
+      <Header />
+      <main className="flex-1 pt-24 lg:pt-28">
         <section className="py-16 md:py-24 bg-muted">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               Our Game Portfolio
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-              Explore our full range of high-performing slots, designed to captivate players and drive revenue.
+              Explore our collection of high-performing slots, designed to captivate players and drive revenue
             </p>
           </div>
         </section>
@@ -175,7 +99,7 @@ export default function GamesPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-4 gap-8">
               <aside className="lg:col-span-1">
-                <Card className="sticky top-24 bg-muted">
+                <Card className="sticky top-32 bg-muted">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Filter className="h-5 w-5" />

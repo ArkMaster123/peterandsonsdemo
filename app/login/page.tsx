@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { MountainIcon, ArrowLeft } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useToast } from "@/components/ui/use-toast"
 
 const gameQuotes = [
   {
@@ -54,16 +56,75 @@ const gameQuotes = [
 
 export default function LoginPage() {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  })
+  const router = useRouter()
+  const { toast } = useToast()
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % gameQuotes.length)
-    }, 4000) // Change quote every 4 seconds
+    }, 4000)
 
     return () => clearInterval(interval)
   }, [])
 
   const currentQuote = gameQuotes[currentQuoteIndex]
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+
+    try {
+      // For demo purposes, we'll use a simple validation
+      // In a real app, this would be an API call to your auth endpoint
+      if (formData.email && formData.password) {
+        // Simulate API call delay
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        
+        // For demo: redirect to dashboard for any valid email/password
+        toast({
+          title: "Login successful",
+          description: "Redirecting to dashboard...",
+        })
+        
+        router.push("/client-portal/dashboard")
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Invalid credentials",
+          description: "Please enter both email and password.",
+        })
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "An error occurred during login. Please try again.",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleSSOLogin = () => {
+    setIsLoading(true)
+    // Simulate SSO login
+    setTimeout(() => {
+      router.push("/client-portal/dashboard")
+    }, 1000)
+  }
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
@@ -149,7 +210,7 @@ export default function LoginPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-sm font-medium">Email</Label>
                   <Input 
@@ -158,6 +219,9 @@ export default function LoginPage() {
                     placeholder="m@example.com" 
                     required 
                     className="h-12"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    disabled={isLoading}
                   />
                 </div>
                 <div className="space-y-2">
@@ -175,13 +239,17 @@ export default function LoginPage() {
                     type="password" 
                     required 
                     className="h-12"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    disabled={isLoading}
                   />
                 </div>
                 <Button 
                   type="submit" 
                   className="w-full h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-medium"
+                  disabled={isLoading}
                 >
-                  Login
+                  {isLoading ? "Logging in..." : "Login"}
                 </Button>
               </form>
               
@@ -197,14 +265,16 @@ export default function LoginPage() {
               <Button 
                 variant="outline" 
                 className="w-full h-12 font-medium"
+                onClick={handleSSOLogin}
+                disabled={isLoading}
               >
-                Login with SSO
+                {isLoading ? "Redirecting..." : "Login with SSO"}
               </Button>
               
               <div className="text-center text-sm text-muted-foreground">
                 Don't have access?{" "}
                 <Link 
-                  href="#" 
+                  href="/partnerships" 
                   className="font-medium text-accent hover:text-accent/80 transition-colors"
                 >
                   Request a Partnership
@@ -226,4 +296,4 @@ export default function LoginPage() {
       </div>
     </div>
   )
-} 
+}

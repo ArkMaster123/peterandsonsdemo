@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { Menu, X, ChevronRight, MountainIcon } from "lucide-react"
 import { useScroll, motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Header } from "./header"
 
 const menuItems = [
   { name: "About", href: "/about" },
@@ -115,51 +116,51 @@ const HeroHeader = () => {
 export function NewHero() {
   return (
     <>
-      <HeroHeader />
-      <section>
-        <div className="py-24 md:pb-32 lg:pb-36 lg:pt-48">
-          <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-12 text-center">
-            <h1 className="mt-8 max-w-4xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold text-white drop-shadow-2xl">
-              Games That Win Big for Casino Partners
-            </h1>
-            <p className="mt-8 max-w-3xl text-balance text-lg text-white/90 drop-shadow-lg">
-              We make games that players love to play. Happy players spend more time and money. 
-              This means more profit for your casino.
-            </p>
-            <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-              <Button
-                asChild
-                size="lg"
-                className="h-12 rounded-full pl-5 pr-3 text-base bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                <Link href="/games">
-                  <span className="text-nowrap">See Our Games</span>
-                  <ChevronRight className="ml-1" />
-                </Link>
-              </Button>
-              <Button
-                key={2}
-                asChild
-                size="lg"
-                variant="ghost"
-                className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5"
-              >
-                <Link href="#">
-                  <span className="text-nowrap">Book a Call</span>
-                </Link>
-              </Button>
+      <Header />
+      <section className="relative">
+        <div className="aspect-[2/3] absolute inset-0 overflow-hidden sm:aspect-video">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="size-full object-cover"
+            src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477"
+          ></video>
+        </div>
+        
+        <div className="relative py-24 md:pb-32 lg:pb-36 lg:pt-48">
+          <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-12">
+            <div className="rounded-3xl bg-black/40 backdrop-blur-md p-8 md:p-12 w-full max-w-4xl">
+              <h1 className="mt-8 text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold text-white drop-shadow-lg">
+                Games That Win Big for Casino Partners
+              </h1>
+              <p className="mx-auto mt-6 max-w-2xl text-balance text-lg md:text-xl text-white/90 drop-shadow">
+                We make games that players love to play. Happy players spend more time and money. This means more profit for your casino.
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="relative z-20 bg-accent hover:bg-accent/90 text-accent-foreground transition-colors min-w-[200px] active:scale-95"
+                >
+                  <Link href="/games" className="flex items-center justify-center">
+                    See Our Games <ChevronRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="lg"
+                  className="relative z-20 text-white hover:bg-white/10 transition-colors min-w-[200px] active:scale-95"
+                >
+                  <Link href="#contact" className="flex items-center justify-center">
+                    Book a Call
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="aspect-[2/3] absolute inset-0 overflow-hidden sm:aspect-video">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60 z-10" />
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="size-full object-cover"
-              src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477"
-            ></video>
           </div>
         </div>
       </section>

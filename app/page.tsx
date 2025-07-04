@@ -6,7 +6,7 @@ import { ShoppingCart, Twitter, Linkedin, Facebook } from "lucide-react"
 import { InteractiveRoiCalculator } from "@/app/components/interactive-roi-calculator"
 import { NewHero } from "@/app/components/new-hero"
 
-export default function Component() {
+export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <NewHero />
@@ -220,85 +220,6 @@ export default function Component() {
 
         <InteractiveRoiCalculator />
       </main>
-      <footer className="bg-charcoal text-light-gray">
-        <div className="container mx-auto py-12 px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div>
-              <h3 className="text-lg font-bold text-white">Peter & Sons</h3>
-              <p className="mt-2 text-sm text-light-gray/70">
-                Fun games that make you more money. We partner with casinos to help them win.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white">Quick Links</h3>
-              <ul className="mt-2 space-y-1">
-                <li>
-                  <Link href="/games" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Games
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Partnerships
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white">Resources</h3>
-              <ul className="mt-2 space-y-1">
-                <li>
-                  <Link href="/login" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Client Portal
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Merchandise
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm hover:text-premium-gold" prefetch={false}>
-                    Documentation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white">Connect</h3>
-              <div className="flex mt-2 space-x-4">
-                <Link href="#" className="text-light-gray/70 hover:text-premium-gold" prefetch={false}>
-                  <Twitter className="h-6 w-6" />
-                </Link>
-                <Link href="#" className="text-light-gray/70 hover:text-premium-gold" prefetch={false}>
-                  <Linkedin className="h-6 w-6" />
-                </Link>
-                <Link href="#" className="text-light-gray/70 hover:text-premium-gold" prefetch={false}>
-                  <Facebook className="h-6 w-6" />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 border-t border-light-gray/20 pt-8 text-center text-sm text-light-gray/50">
-            <p>&copy; {new Date().getFullYear()} Peter & Sons. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
