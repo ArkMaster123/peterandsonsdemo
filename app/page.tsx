@@ -207,7 +207,7 @@ export default function Component() {
               <h3 className="text-lg font-bold text-white">Resources</h3>
               <ul className="mt-2 space-y-1">
                 <li>
-                  <Link href="/client-portal/login" className="text-sm hover:text-premium-gold" prefetch={false}>
+                  <Link href="/login" className="text-sm hover:text-premium-gold" prefetch={false}>
                     Client Portal
                   </Link>
                 </li>

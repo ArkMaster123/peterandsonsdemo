@@ -100,7 +100,7 @@ const HeroHeader = () => {
                   asChild
                   className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
                 >
-                  <Link href="/client-portal/login">Login</Link>
+                  <Link href="/login">Login</Link>
                 </Button>
                 <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Get in Touch</Button>
               </div>
