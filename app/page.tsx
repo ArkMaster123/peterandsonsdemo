@@ -92,20 +92,19 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <Image
-                  src="/placeholder-a7ddg.png"
-                  alt="Partner Logo"
+                  src="/evegnii.png"
+                  alt="Evgenii Lucky"
                   width={500}
                   height={500}
                   className="rounded-lg"
                 />
               </div>
               <div className="text-left">
-                <blockquote className="text-2xl font-semibold italic border-l-4 border-premium-gold pl-6">
-                  "Working with Peter & Sons was a game-changer. Our players are more engaged, and we've seen a 25%
-                  boost. They're true partners."
+                <blockquote className="text-xl font-semibold italic border-l-4 border-premium-gold pl-6">
+                  "Working with Sonya has been an absolute privilege. She is an incredibly motivating and understanding leader who consistently provides invaluable support in the workplace. Sonya is an exceptional manager who delivers on her responsibilities with 100% dedication. Her deep understanding of the industry, strong grasp of metrics, and ability to inspire and motivate her team set her apart."
                 </blockquote>
-                <p className="mt-6 font-bold text-xl">- Alex Chen, Head of Gaming</p>
-                <p className="text-light-gray/80">A Top-Tier Casino Group</p>
+                <p className="mt-6 font-bold text-xl">- Evgenii Lucky</p>
+                <p className="text-light-gray/80">HR Manager / Talent Hunter at iGaming</p>
                 <Button
                   variant="outline"
                   className="mt-8 border-premium-gold text-premium-gold hover:bg-premium-gold hover:text-white bg-transparent"

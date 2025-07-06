@@ -21,15 +21,15 @@ export default function PartnershipsPage() {
           <div className="container relative mx-auto px-4 md:px-6 py-20 md:py-32">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
-              <div className="text-left space-y-6 animate-in slide-in-from-left duration-700">
+              <div className="text-center lg:text-left space-y-6 animate-in slide-in-from-left duration-700">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white">
                   Partner With
                   <span className="block text-premium-gold">Excellence</span>
                 </h1>
-                <p className="text-xl text-gray-400 max-w-xl">
+                <p className="text-xl text-gray-400 max-w-xl mx-auto lg:mx-0">
                   Join forces with the industry's most innovative game studio. Our partnerships drive success through cutting-edge technology, stunning visuals, and unmatched player engagement.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <Button 
                     size="lg" 
                     className="bg-premium-gold text-black hover:bg-premium-gold/90 transition-all duration-300 group"

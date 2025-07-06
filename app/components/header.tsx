@@ -68,7 +68,7 @@ export function Header() {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-white/90 hover:text-white block duration-150 drop-shadow-lg"
+                      className="text-white/90 hover:text-accent block duration-150 drop-shadow-lg"
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -83,7 +83,7 @@ export function Header() {
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-white/90 hover:text-white block duration-150 drop-shadow-lg"
+                        className="text-white/90 hover:text-accent block duration-150 drop-shadow-lg"
                       >
                         <span>{item.name}</span>
                       </Link>

@@ -132,12 +132,12 @@ export function NewHero() {
         
         <div className="relative py-24 md:pb-32 lg:pb-36 lg:pt-48">
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-12">
-            <div className="rounded-3xl bg-black/40 backdrop-blur-md p-8 md:p-12 w-full max-w-4xl">
+            <div className="rounded-3xl bg-black/40 backdrop-blur-md p-8 md:p-12 w-full max-w-4xl text-center">
               <h1 className="mt-8 text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold text-white drop-shadow-lg">
-                Games That Win Big for Casino Partners
+                Your Platform's Secret Growth Engine
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-balance text-lg md:text-xl text-white/90 drop-shadow">
-                We make games that players love to play. Happy players spend more time and money. This means more profit for your casino.
+                Built on relentless data driven decisions, tested in live markets our titles boost your returns by 2–5× over industry norms.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
